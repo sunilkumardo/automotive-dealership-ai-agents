@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoDealer AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="header-icon">🚗</div>
+            <div class="header-text">
+                <h1>AutoDealer AI</h1>
+                <span class="status">● Online</span>
+            </div>
+        </div>
+
+        <!-- Chat messages area -->
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="message-bubble">
+                    Hi! I'm your AutoDealer AI Assistant. I can help you with:<br><br>
+                    🚘 <b>Car purchases</b> — prices, EMI, models<br>
+                    🔧 <b>Service bookings</b> — appointments, repairs<br>
+                    ❓ <b>General queries</b> — features, comparisons<br><br>
+                    How can I help you today?
+                </div>
+            </div>
+        </div>
+
+        <!-- Intent badge — shows which agent handled the message -->
+        <div class="intent-bar" id="intentBar" style="display:none">
+            Handled by: <span id="intentLabel">-</span> agent
+        </div>
+
+        <!-- Input area -->
+        <div class="chat-input-area">
+            <input 
+                type="text" 
+                id="userInput" 
+                placeholder="Type your message..." 
+                autocomplete="off"
+            />
+            <button id="sendBtn" onclick="sendMessage()">Send</button>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
