@@ -32,7 +32,7 @@ def query_agent(customer_message: str) -> str:
 
     # Call Gemini API with latest model
     response = client.models.generate_content(
-        model="gemini-2.0-flash",
+        model="gemini-2.5-flash",
         contents=full_prompt
     )
 
