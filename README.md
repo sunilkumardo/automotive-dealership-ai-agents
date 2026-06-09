@@ -16,19 +16,29 @@ This system solves that using specialised AI agents that handle customer interac
 
 ## 🏗️ System Architecture
 
+```
 Customer Message
-↓
-Router Agent  ←── Intent Classification
-↙     ↓     ↘
-Lead  Service  Query
-Agent  Agent   Agent
-↘     ↓     ↙
-FastAPI Backend
-↓
-Chat UI (HTML/CSS/JS)
-
-
----
+        │
+        ▼
+  ┌─────────────┐
+  │ Router Agent│ ◄── Intent Classification
+  └─────────────┘
+    │     │     │
+    ▼     ▼     ▼
+ Lead  Service Query
+ Agent  Agent  Agent
+    │     │     │
+    └─────┼─────┘
+          ▼
+   ┌─────────────┐
+   │FastAPI Back │
+   └─────────────┘
+          │
+          ▼
+   ┌─────────────┐
+   │  Chat UI    │
+   └─────────────┘
+```
 
 ## 🤖 Agents
 
@@ -56,27 +66,27 @@ Chat UI (HTML/CSS/JS)
 
 ## 📁 Project Structure
 
-automotive-dealership-ai-agents/
-├── agents/
-│   ├── router_agent.py      # Intent classification
-│   ├── lead_agent.py        # Lead management
-│   ├── service_agent.py     # Service booking
-│   └── query_agent.py       # General queries
-├── prompts/
-│   ├── router_prompt.txt    # Router system prompt
-│   ├── lead_prompt.txt      # Lead agent prompt
-│   ├── service_prompt.txt   # Service agent prompt
-│   └── query_prompt.txt     # Query agent prompt
-├── frontend/
-│   ├── index.html           # Chat UI
-│   ├── style.css            # Styling
-│   └── app.js               # Frontend logic
-├── tests/
-│   └── test_agents.py       # Unit tests
-├── .github/workflows/
-│   └── ci.yml               # GitHub Actions CI pipeline
-├── main.py                  # FastAPI application
-└── requirements.txt
+    automotive-dealership-ai-agents/
+    ├── agents/
+    │   ├── router_agent.py      # Intent classification
+    │   ├── lead_agent.py        # Lead management
+    │   ├── service_agent.py     # Service booking
+    │   └── query_agent.py       # General queries
+    ├── prompts/
+    │   ├── router_prompt.txt
+    │   ├── lead_prompt.txt
+    │   ├── service_prompt.txt
+    │   └── query_prompt.txt
+    ├── frontend/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── app.js
+    ├── tests/
+    │   └── test_agents.py
+    ├── .github/workflows/
+    │   └── ci.yml
+    ├── main.py
+    └── requirements.txt
 
 
 ---
