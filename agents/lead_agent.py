@@ -31,7 +31,7 @@ def lead_agent(customer_message: str) -> dict:
     full_prompt = f"{system_prompt}\n\nCustomer message: {customer_message}"
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-2.0-flash",
         contents=full_prompt
     )
 
